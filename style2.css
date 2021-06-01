@@ -1,0 +1,170 @@
+*{
+	/*display: none;*/
+	/*border: 1px solid red;*/
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #f4f4f4;
+}
+
+.longkap{
+	display: none;
+}
+
+h1{
+	color: #073b4c;
+	margin-bottom: 20px;
+	font-size: 50px;
+}
+
+h2{
+	color: #333;
+	text-shadow: 2px 2px 3px #ddd;
+	margin: 15px;
+	font-size: 28px;
+}
+
+h3{
+	font-size: 24px;
+}
+
+h4{
+	font-size: 32px;
+}
+
+h1,h2{
+	text-align: center;
+
+}
+
+h3,h4{
+	color: #fff;
+	text-shadow: 2px 2px 5px #333;
+}
+
+.container{
+	max-width: 1020px;
+	margin: 0 auto;
+	padding: 10px;
+	margin-top: 20px;
+}
+
+.indonesia{
+	margin-bottom: 100px;
+}
+
+.data{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.kasus{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: space-around;
+	padding: 20px 50px;
+	border-radius: 20px;
+	border: 2px solid #333;
+}
+
+.sembuh{
+	 background-color: #06d6a0;
+}
+
+.positif{
+	background-color: #ffd166;
+}
+
+.meninggal{
+	background-color: #ef476f;
+}
+
+.judul-daerah{
+	text-align: center;
+	font-size: 42px;
+}
+
+.kasus-daerah{
+	padding: 20px 50px;
+}
+
+/*.daerah {
+	display: flex;
+	margin-top: 10px;
+	justify-content: space-around;
+}*/
+
+form{
+	/*margin: 0 auto;*/
+	text-align: center;
+}
+
+form select{
+	padding: 5px;
+	background-color: #fff;
+	border: 2px solid #118ab2 ;
+	border-radius: 15px;
+	color: #118ab2;
+	font-weight: 700;
+}
+
+form select option{
+	color: #118ab2;
+	}
+
+input[type="submit"]{
+	background-color: #fff;
+	padding: 5px 20px;
+	border: 2px solid #118ab2;
+	color: #118ab2;
+	font-size: 14px;
+	font-weight: 700;
+	border-radius: 100px;
+}
+
+input[type="submit"]:hover{
+	background-color: #118ab2;
+	color: #fff;
+	cursor: pointer;
+	transition:  .5s;
+}
+
+label{
+	font-size: 22px;
+	color: #118ab2;
+	text-shadow: 1px 1px 2px #fff;
+	font-weight: 700;
+}
+
+@media (max-width:481px){
+
+	.longkap{
+		display: block;
+	}
+
+	h1{
+		font-size: 32px;
+	}
+
+	.judul-daerah{
+		font-size: 32px;
+	}
+
+	h2{
+		font-size: 24px;
+	}
+
+	.data{
+		flex-direction: column;
+	}
+
+	.kasus{
+		margin: 10px 0;
+	}
+}

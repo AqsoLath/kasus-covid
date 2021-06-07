@@ -1,12 +1,16 @@
 <?php 
+// error_function(8191, "ada error");
 
-$data = file_get_contents("https://api.kawalcorona.com/indonesia");
+// var_dump(error_get_last());
 
-// $data = file_get_contents("indonesia.json");
 
-$data2 = file_get_contents("https://api.kawalcorona.com/indonesia/provinsi");
+// $data = file_get_contents("https://api.kawalcorona.com/indonesia");
 
-// $data2 = file_get_contents("daerah.json");
+$data = file_get_contents("indonesia.json");
+
+// $data2 = file_get_contents("https://api.kawalcorona.com/indonesia/provinsi");
+
+$data2 = file_get_contents("daerah.json");
 
 $korona = json_decode($data, true);
 
@@ -15,6 +19,13 @@ $provinsi = json_decode($data2, true);
 // var_dump($korona) ;
 // var_dump($provinsi[1]);
 // var_dump($provinsi[7]);
+
+// if (null !== error_get_last()) {
+	// var_dump("berhasil");
+	// header("Location: latihan1.php");
+// }
+
+// <button onClick="window.location.reload();">Refresh Page</button>
 
  ?>
 
@@ -26,9 +37,11 @@ $provinsi = json_decode($data2, true);
 
 	<title>kasus korona</title>
 
-	<link rel="stylesheet" type="text/css" href="style2.css">
+	<link rel="stylesheet" type="text/css" href="style3.css">
 </head>
 <body>
+
+	<a href="refresh.php" class="error-button refresh">Refresh</a>
 
 <div class="container">
 	<div class="indonesia">
@@ -39,7 +52,7 @@ $provinsi = json_decode($data2, true);
 				<h4><?php echo($korona[0]["positif"]) ?> </h4>
 			</div>
 			<div class="kasus meninggal">
-				<h3>Meninggoy </h3>
+				<h3>Meninggal </h3>
 				<h4> <?php echo($korona[0]["meninggal"]) ?> </h4>
 			</div>
 			<div class="kasus sembuh">
@@ -52,7 +65,6 @@ $provinsi = json_decode($data2, true);
 	<h1 class="judul-daerah">Kasus Covid19 Daerah</h1>
 	<div class="daerah" >
 			<form action="" method="post" class="form-provinsi">
-				<!-- <input type="text" min="0" step="1" name="kode" placeholder="Masukkan kode daerah"> -->
 				<label for="provinsi">Pilih Provinsi: </label>
 				<div class="longkap"></div>
 				<select id="provinsi" name="kode">
@@ -60,11 +72,11 @@ $provinsi = json_decode($data2, true);
 					<?php
 					$i = 0;
 					 foreach ($provinsi as $p): ?>
-						<?php var_dump($p[$i]["attributes"]["Kode_Prov"]); ?>
+						
 						
 						<?php $i++ ?>
 					<?php endforeach ?>
-					<?php for ($i=0; $i < 34; $i++) :?> 
+					<?php for ($i=0; $i < 1; $i++) :?> 
 						<option value="<?php echo $i ?>"> <?php echo $provinsi[$i]["attributes"]["Provinsi"]; ?> </option>
 					<?php endfor ?>
 					
@@ -75,7 +87,7 @@ $provinsi = json_decode($data2, true);
 			<?php if (isset($_POST['submit'])): ?>
 				<?php 
 				 $int = (is_numeric($_POST['kode']) ? (int)$_POST['kode'] : 0);
-				 // var_dump($int); ?>
+				  ?>
 				<h2> Provinsi   <?php echo $provinsi[$int]["attributes"]["Provinsi"] ; ?> </h2>
 				<div class="data data">
 					<div class="kasus positif kasus-daerah">
@@ -94,5 +106,27 @@ $provinsi = json_decode($data2, true);
 			<?php endif ?>
 	</div>
 </div>
+
+
+
+
+<?php 
+
+if (null !== error_get_last()) : ?>
+
+	<!-- <button ></button> -->
+	<div class="container">
+		<div class="error">
+			<div class="box-error">
+				<h6>Ada Masalah</h6>
+				<a href="refresh.php" class="error-button">REFRESH</a>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- header("Location: refresh.php"); -->
+
+<?php endif ?>
 </body>
 </html>

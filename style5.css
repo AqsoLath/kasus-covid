@@ -8,57 +8,116 @@
 }
 
 body{
-	background-color: #f4f4f4;
+	/*background-color: #f4f4f4;*/
 }
 
 .longkap{
 	display: none;
 }
 
-h1{
-	color: #073b4c;
-	margin-bottom: 20px;
-	font-size: 50px;
+.navbar-gw{
+	background-color: lightblue !important;
 }
 
-h2{
+.kasus-all{
+	margin-top: 80px;
+}
+
+.indonesia h1{
+	color: #073b4c;
+	margin-bottom: 20px;
+	font-size: 60px;
+	font-family: 'Patua One', cursive;
+}
+
+.indonesia h2{
 	color: #333;
 	text-shadow: 2px 2px 3px #ddd;
 	margin: 15px;
 	font-size: 28px;
 }
 
-h3{
-	font-size: 24px;
+.indonesia h3{
+	font-size: 38px;
 }
 
-h4{
-	font-size: 32px;
+.indonesia h4{
+	font-size: 50px;
+	text-shadow: 1px 1px 1px #333;
+	letter-spacing: 1px;
+	font-weight: 800;
 }
 
-h1,h2{
+.daerah h1{
+	color: #073b4c;
+	margin-bottom: 20px;
+	font-size: 60px;
+	font-family: 'Patua One', cursive;
+}
+
+.daerah h2{
+	color: #073b4c;
+	/*text-shadow: 2px 2px 3px #ddd;*/
+	margin: 15px;
+	font-size: 28px;
+	font-family: 'Patua One', cursive;
+}
+
+.daerah h3{
+	font-size: 38px;
+	font-family: 'Prompt', sans-serif;
+}
+
+.daerah h4{
+	font-size: 50px;
+	text-shadow: 1px 1px 1px #333;
+	letter-spacing: -2px;
+	font-weight: 800;
+	font-family: 'Prompt', sans-serif;
+}
+
+
+.kasus-all h1,h2{
 	text-align: center;
 
 }
 
-h3,h4{
-	color: #fff;
-	text-shadow: 2px 2px 5px #333;
+.daerah h3,h4{
+	color: #073b4c;
+	font-family: 'Prompt', sans-serif;
 }
 
-.container{
-	max-width: 1020px;
-	margin: 0 auto;
-	padding: 10px;
-	margin-top: 20px;
+.indonesia h3{
+	color: #073b4c ;
+	font-family: 'Prompt', sans-serif;
+	font-size: 42px;
 }
 
+.indonesia .meninggal h4{
+	color: #ef4747;
+}
+
+.indonesia .sembuh h4{
+	color: #06d680;
+}
+.indonesia .positif h4{
+	color: #ffde66;
+}
 .indonesia{
 	margin-bottom: 100px;
 }
 
+.indonesia .data{
+	flex-direction: column;
+}
+
+.indonesia .kasus{
+	margin-top: 0;
+}
+
 .data{
 	display: flex;
+/*	flex-direction: column;*/
 	justify-content: space-around;
 	align-items: center;
 }
@@ -68,27 +127,31 @@ h3,h4{
 	flex-direction: column;
 	text-align: center;
 	justify-content: space-around;
-	padding: 20px 50px;
-	border-radius: 20px;
-	border: 2px solid #333;
+	padding: 20px 20px;
 }
 
-.sembuh{
-	 background-color: #06d6a0;
+.indonesia .kasus{
+	border: none;
 }
 
-.positif{
-	background-color: #ffd166;
+.daerah .sembuh h4 {
+	color: #06d680;
+}
+.daerah .positif h4{
+	color: #ffde66;
 }
 
-.meninggal{
-	background-color: #ef476f;
+.daerah .meninggal h4{
+	color: #ef4747;
 }
 
 .judul-daerah{
-	text-align: center;
-	font-size: 42px;
+	color: #073b4c;
+	margin-bottom: 20px;
+	font-size: 60px;
+	font-family: 'Patua One', cursive;
 }
+
 
 .kasus-daerah{
 	padding: 20px 50px;
@@ -140,6 +203,28 @@ label{
 	color: #118ab2;
 	text-shadow: 1px 1px 2px #fff;
 	font-weight: 700;
+}
+
+.pencegahan{
+	position: relative;
+}
+
+.tanda-pencegahan{
+	position: absolute;
+	background-color: red;
+	width: 20px;
+	height: 20px;
+	top: -80px;
+	visibility: hidden;
+}
+
+.pencegahan-box img{
+	width: 400px;
+	height: 250px;
+}
+
+.pencegahan h2{
+	font-size: 50px;
 }
 
 
@@ -220,5 +305,10 @@ label{
 
 	.kasus{
 		margin: 10px 0;
+	}
+
+	.pencegahan-box img{
+		width: 250px;
+		height: 140px;
 	}
 }

@@ -40,18 +40,44 @@ $provinsi = json_decode($data2, true);
 
 	<title>kasus korona</title>
 
-	<link rel="stylesheet" type="text/css" href="style3.css">
+	<link rel="stylesheet" type="text/css" href="style5.css">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+
+	<link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Prompt&display=swap" rel="stylesheet">
+
+	<!-- aos -->
+
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-	<a href="refresh.php" class="error-button refresh">Refresh</a>
+<nav class="navbar navbar-expand-lg navbar-light  fixed-top navbar-gw">
+  <div class="container">
+    <a class="navbar-brand" href="#">HEHE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link mx-3" href="#">Kasus</a>
+        <a class="nav-link mx-3" href="#pencegahan">Pencegahan</a>
+        <a class="nav-link mx-3" href="#">Gejala</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+	<!-- <a href="refresh.php" class="error-button refresh">Refresh</a> -->
 
 <div class="container">
-	<div class="kasus-all">
+	<div class="kasus-all " id="kasus">
 		<div class="indonesia">
-			<h1>Kasus Covid19 Indonesia</h1>
+			<h1>Kasus Covid-19 Indonesia</h1>
 			<div class="data">
 				<div class="kasus positif">
 					<h3>Positif </h3> 
@@ -68,7 +94,7 @@ $provinsi = json_decode($data2, true);
 			</div>
 		</div>
 
-		<h1 class="judul-daerah">Kasus Covid19 Daerah</h1>
+		<h1 class="judul-daerah">Kasus Covid-19 Daerah</h1>
 		<div class="daerah" >
 				<form action="" method="post" class="form-provinsi">
 					<label for="provinsi">Pilih Provinsi: </label>
@@ -112,7 +138,38 @@ $provinsi = json_decode($data2, true);
 				<?php endif ?>
 		</div>
 	</div>
-	<div class="pencegahan">
+	<div class="pencegahan mt-5">
+		<div class="tanda-pencegahan" id="pencegahan"></div>
+		<h2 class="mb-3">Langkah Pencegahan</h2>
+		<div class="pencegahan-box">
+			<div class="row mt-3 "  data-aos="zoom-in-up" data-aos-duration="1000">
+				<div class="col-lg-6"><img src="image/masker.png" class="mx-auto d-block"></div>
+				<div class="col-lg-6">
+					<h3>Memakai Masker</h3>
+					<p>
+					Memakai masker adalah hal yang penting untuk mengendalikan penyebaran virus corona, termasuk di dalam rumah. Tinjauan CDC memperjelas bahwa penggunaan masker, menjaga jarak secara fisik, menghindari keramaian, dan mencuci tangan membantu mengendalikan penyebaran virus jahat ini.
+					</p>
+				</div>
+			</div>
+			<div class="row mt-3"  data-aos="zoom-in-up" data-aos-duration="1000">
+				<div class="col-lg-6"><img src="image/jarak.png" class="mx-auto d-block"></div>
+				<div class="col-lg-6">
+					<h3>Menjaga Jarak</h3>
+					<p>
+					Untuk menghentikan penyebaran virus corona yang terjadi saat ini, masyarakat telah diinstruksikan untuk melakukan physical distancing atau menjaga jarak antar manusia dengan cara tinggal di rumah, menghindari keramaian, dan menahan diri untuk tidak melakukan kontak langsung dengan orang lain.
+					</p>
+				</div>
+			</div>
+			<div class="row mt-3"  data-aos="zoom-in-up" data-aos-duration="1000">
+				<div class="col-lg-6"><img src="image/tangan.jpg" class="mx-auto d-block"></div>
+				<div class="col-lg-6">
+					<h3>Mencuci Tangan</h3>
+					<p>
+					Kuman penyakit sangat mudah ditularkan melalui tangan.Pada saat makan kuman dengan cepat masuk ke dalam tubuh, yang bisa menimbulkan penyakit. Tangan kadang terlihat bersih secara kasat mata namun tetap mengandung kuman.Sabun dapat membersihkan kotoran dan merontokkan kuman. Tanpa sabun, kotoran dan kuman masih tertinggal di tangan.
+					</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -137,5 +194,12 @@ if (null !== error_get_last()) : ?>
 	<!-- header("Location: refresh.php"); -->
 
 <?php endif ?>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>

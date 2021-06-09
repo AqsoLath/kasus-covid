@@ -4,13 +4,13 @@
 // var_dump(error_get_last());
 
 
-// $data = file_get_contents("https://api.kawalcorona.com/indonesia");
+$data = file_get_contents("https://api.kawalcorona.com/indonesia");
 
-$data = file_get_contents("indonesia.json");
+// $data = file_get_contents("indonesia.json");
 
-// $data2 = file_get_contents("https://api.kawalcorona.com/indonesia/provinsi");
+$data2 = file_get_contents("https://api.kawalcorona.com/indonesia/provinsi");
 
-$data2 = file_get_contents("daerah.json");
+// $data2 = file_get_contents("daerah.json");
 
 
 
@@ -40,7 +40,7 @@ $provinsi = json_decode($data2, true);
 
 	<title>kasus korona</title>
 
-	<link rel="stylesheet" type="text/css" href="style5.css">
+	<link rel="stylesheet" type="text/css" href="style7.css">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
@@ -68,7 +68,7 @@ $provinsi = json_decode($data2, true);
       <div class="navbar-nav">
         <a class="nav-link mx-3" href="#">Kasus</a>
         <a class="nav-link mx-3" href="#pencegahan">Pencegahan</a>
-        <a class="nav-link mx-3" href="#">Gejala</a>
+        <a class="nav-link mx-3" href="#gejala">Gejala</a>
       </div>
     </div>
   </div>
@@ -96,6 +96,9 @@ $provinsi = json_decode($data2, true);
 			</div>
 			<img src="image/virus.png" class="virus1">
 			<img src="image/virus.png" class="virus2">
+			<img src="image/virus.png" class="virus3">
+			<img src="image/virus.png" class="virus4">
+			<!-- <img src="image/virus.png" class="virus5"> -->
 
 		</div>
 
@@ -113,7 +116,7 @@ $provinsi = json_decode($data2, true);
 							
 							<?php $i++ ?>
 						<?php endforeach ?>
-						<?php for ($i=0; $i < 1; $i++) :?> 
+						<?php for ($i=0; $i < 34; $i++) :?> 
 							<option value="<?php echo $i ?>"> <?php echo $provinsi[$i]["attributes"]["Provinsi"]; ?> </option>
 						<?php endfor ?>
 						
@@ -177,22 +180,57 @@ $provinsi = json_decode($data2, true);
 		</div>
 	</div>
 
-	<div class="gejala">
-		<div class="row">
-			<div class="col-4">
-				<h3>Gejala - Gejala Covid 19</h3>
-		       <h4>Gejala yang Paling Umum dari Covid 19 adalah </h4>
-		       <li> Demam </li>
-		       <li>Batuk Kering</li>
-		       <li>Kelelahan</li>
+	<div class="gejala" id="gejala">
+		<h2 class="mt-5 mb-4">Gejala - Gejala Covid 19</h2>
+		<div class="gejala-box">
+			<div class="row mt-3" >
+				<div class="col-lg-6 d-flex justify-content-center flex-column align-items-center">	
+					<div>
+				       <h3>Gejala Paling Umum</h3>
+				       <li  data-aos="fade-right" data-aos-duration="400" > Demam </li>
+				       <li  data-aos="fade-right" data-aos-duration="600" >Batuk Kering</li>
+				       <li data-aos="fade-right" data-aos-duration="800">Kelelahan</li>
+			       </div>
+				</div>
+				<div class="col-lg-6" data-aos="fade-left" data-aos-duration="1200" >	
+			       <img src="image/batuk.jpg" class="d-block mx-auto">
+				</div>
+			</div>
 
+			<div class="row mt-3">
+				<div class="col-lg-6 d-flex justify-content-center align-items-center flex-column">
+					<div>	
+				       <h3 >Gejala Kurang Umum  </h3>
+				       <li data-aos="fade-left" data-aos-duration="400"> Lidah Mati Rasa</li>
+				       <li data-aos="fade-left" data-aos-duration="600">Sakit Tenggorokan</li>
+				       <li data-aos="fade-left" data-aos-duration="800">Mual dan Muntah-muntah</li>
+			       </div>
+				</div>
+				<div class="col-lg-6">	
+			       <img src="image/tenggo.jpg" class="d-block mx-auto" data-aos="fade-right" data-aos-duration="1200">
+				</div>
+			</div>
+
+			<div class="row mt-3">
+				<div class="col-lg-6 d-flex justify-content-center flex-column align-items-center">	
+					<div>
+				       <h3 >Gejala Berat</h3>
+				       <li data-aos="fade-right" data-aos-duration="400"> Sesak Nafas </li>
+				       <li data-aos="fade-right" data-aos-duration="600">Nafsu Makan Hilang</li>
+				       <li data-aos="fade-right" data-aos-duration="800">Rasa Sakit Terus Menerus di Dada</li>
+			       </div>
+				</div>
+				<div class="col-lg-6">	
+			       <img src="image/sesak.jpg" class="d-block mx-auto" data-aos="fade-left" data-aos-duration="1200">
+				</div>
 			</div>
 		</div>
+			
 		
 	</div>
 </div>
 
-
+<footer>Copyright 2021</footer>
 
 
 

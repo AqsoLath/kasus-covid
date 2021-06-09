@@ -23,6 +23,10 @@ body{
 	margin-top: 80px;
 }
 
+.indonesia{
+	position: relative;
+}
+
 .indonesia h1{
 	color: #073b4c;
 	margin-bottom: 20px;
@@ -47,6 +51,21 @@ body{
 	letter-spacing: 1px;
 	font-weight: 800;
 }
+
+.virus1{
+	position: absolute;
+	bottom: 100px;
+	left: 0;
+	width: 70px;
+}
+
+.virus2{
+	position: absolute;
+	top: 100px;
+	right:  0;
+	width: 100px;
+}
+
 
 .daerah h1{
 	color: #073b4c;
@@ -209,6 +228,8 @@ label{
 	position: relative;
 }
 
+
+
 .tanda-pencegahan{
 	position: absolute;
 	background-color: red;
@@ -224,7 +245,17 @@ label{
 }
 
 .pencegahan h2{
+	font-family: 'Secular One', sans-serif;
+}
+
+.pencegahan h2{
 	font-size: 50px;
+	/*color: #073b4c;*/
+	color: #333;
+}
+
+.pencegahan-box p{
+	font-size: 17px;
 }
 
 

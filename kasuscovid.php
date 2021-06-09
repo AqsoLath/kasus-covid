@@ -50,6 +50,8 @@ $provinsi = json_decode($data2, true);
 
 	<link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Prompt&display=swap" rel="stylesheet">
 
+	<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+
 	<!-- aos -->
 
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -92,6 +94,9 @@ $provinsi = json_decode($data2, true);
 					<h4><?php echo($korona[0]["sembuh"]) ?> </h4>
 				</div>
 			</div>
+			<img src="image/virus.png" class="virus1">
+			<img src="image/virus.png" class="virus2">
+
 		</div>
 
 		<h1 class="judul-daerah">Kasus Covid-19 Daerah</h1>
@@ -144,7 +149,7 @@ $provinsi = json_decode($data2, true);
 		<div class="pencegahan-box">
 			<div class="row mt-3 "  data-aos="zoom-in-up" data-aos-duration="1000">
 				<div class="col-lg-6"><img src="image/masker.png" class="mx-auto d-block"></div>
-				<div class="col-lg-6">
+				<div class="col-lg-6 d-flex align-self-center flex-column">
 					<h3>Memakai Masker</h3>
 					<p>
 					Memakai masker adalah hal yang penting untuk mengendalikan penyebaran virus corona, termasuk di dalam rumah. Tinjauan CDC memperjelas bahwa penggunaan masker, menjaga jarak secara fisik, menghindari keramaian, dan mencuci tangan membantu mengendalikan penyebaran virus jahat ini.
@@ -153,7 +158,7 @@ $provinsi = json_decode($data2, true);
 			</div>
 			<div class="row mt-3"  data-aos="zoom-in-up" data-aos-duration="1000">
 				<div class="col-lg-6"><img src="image/jarak.png" class="mx-auto d-block"></div>
-				<div class="col-lg-6">
+				<div class="col-lg-6 d-flex align-self-center flex-column">
 					<h3>Menjaga Jarak</h3>
 					<p>
 					Untuk menghentikan penyebaran virus corona yang terjadi saat ini, masyarakat telah diinstruksikan untuk melakukan physical distancing atau menjaga jarak antar manusia dengan cara tinggal di rumah, menghindari keramaian, dan menahan diri untuk tidak melakukan kontak langsung dengan orang lain.
@@ -162,7 +167,7 @@ $provinsi = json_decode($data2, true);
 			</div>
 			<div class="row mt-3"  data-aos="zoom-in-up" data-aos-duration="1000">
 				<div class="col-lg-6"><img src="image/tangan.jpg" class="mx-auto d-block"></div>
-				<div class="col-lg-6">
+				<div class="col-lg-6 d-flex align-self-center flex-column">
 					<h3>Mencuci Tangan</h3>
 					<p>
 					Kuman penyakit sangat mudah ditularkan melalui tangan.Pada saat makan kuman dengan cepat masuk ke dalam tubuh, yang bisa menimbulkan penyakit. Tangan kadang terlihat bersih secara kasat mata namun tetap mengandung kuman.Sabun dapat membersihkan kotoran dan merontokkan kuman. Tanpa sabun, kotoran dan kuman masih tertinggal di tangan.
@@ -171,7 +176,22 @@ $provinsi = json_decode($data2, true);
 			</div>
 		</div>
 	</div>
+
+	<div class="gejala">
+		<div class="row">
+			<div class="col-4">
+				<h3>Gejala - Gejala Covid 19</h3>
+		       <h4>Gejala yang Paling Umum dari Covid 19 adalah </h4>
+		       <li> Demam </li>
+		       <li>Batuk Kering</li>
+		       <li>Kelelahan</li>
+
+			</div>
+		</div>
+		
+	</div>
 </div>
+
 
 
 

@@ -203,6 +203,10 @@ body{
 	border: none;
 }
 
+.daerah .kasus h4{
+	letter-spacing: 2px;
+}
+
 .daerah .sembuh h4 {
 	color: #06d680;
 }
@@ -494,7 +498,16 @@ footer p{
 	color: #eee;
 }
 
+@media (max-width:1200px){
+	.virus1, .virus2, .virus3, .virus4, .virus5, .tameng{
+		display: none;
+	}
+}
+
 @media (max-width:481px){
+	.indonesia h1{
+		font-size: 50px;
+	}
 
 	.longkap{
 		display: block;
@@ -509,7 +522,7 @@ footer p{
 	}
 
 	.judul-daerah{
-		font-size: 32px;
+		font-size: 48px;
 	}
 
 	h2{
@@ -524,9 +537,21 @@ footer p{
 		margin: 10px 0;
 	}
 
+	form select{
+		padding: 5px;
+	}
+
 	.pencegahan-box img{
 		width: 250px;
 		height: 140px;
+	}
+
+	.pencegahan-box h3{
+		text-align: center !important;
+	}
+
+	.gejala h2{
+		font-size: 42px;
 	}
 
 

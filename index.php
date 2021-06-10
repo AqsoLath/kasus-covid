@@ -163,19 +163,21 @@ $provinsi = json_decode($data2, true);
 					 $int = (is_numeric($_POST['kode']) ? (int)$_POST['kode'] : 0);
 					  ?>
 					<h2> Provinsi   <?php echo $provinsi[$int]["attributes"]["Provinsi"] ; ?> </h2>
-					<div class="data data">
-						<div class="kasus positif kasus-daerah">
-						 	<h3> Positif  </h3>
-							<h4> <?php echo $provinsi[$int]["attributes"]["Kasus_Posi"] ; ?> </h4>
-						 </div>
-						 <div class="kasus meninggal kasus-daerah">
-						 	<h3> Meninggal </h3>
-							<h4>  <?php echo $provinsi[$int]["attributes"]["Kasus_Meni"] ; ?> </h4>
-						 </div>
-						 <div class="kasus sembuh kasus-daerah">
-						 	<h3> Sembuh </h3> 
-							<h4> <?php echo $provinsi[$int]["attributes"]["Kasus_Semb"] ; ?></h4>
-						 </div>	
+					<div class="data data row">
+						
+							<div class="kasus positif kasus-daerah col-lg-4">
+							 	<h3> Positif  </h3>
+								<h4> <?php echo $provinsi[$int]["attributes"]["Kasus_Posi"] ; ?> </h4>
+							 </div>
+							 <div class="kasus meninggal kasus-daerah col-lg-4">
+							 	<h3> Meninggal </h3>
+								<h4>  <?php echo $provinsi[$int]["attributes"]["Kasus_Meni"] ; ?> </h4>
+							 </div>
+							 <div class="kasus sembuh kasus-daerah col-lg-4">
+							 	<h3> Sembuh </h3> 
+								<h4> <?php echo $provinsi[$int]["attributes"]["Kasus_Semb"] ; ?></h4>
+							 </div>	
+						 
 					</div>
 				<?php endif ?>
 				
@@ -220,29 +222,29 @@ $provinsi = json_decode($data2, true);
 		<h2 class="mt-5 mb-4" data-aos="fade-up" data-aos-duration="500">Gejala - Gejala <span>Covid-19</span></h2>
 		
 			<div class="row my-3">
-				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-out" data-aos-duration="1000">
+				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-in" data-aos-duration="1000">
 					<img src="image/batuk-kartun.jpg" class="d-block mx-auto">
 					<h4>Batuk</h4>
 				</div>
-				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-out" data-aos-duration="1000">
+				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-in" data-aos-duration="1000">
 					<img src="image/demam-kartun.jpg" class="d-block mx-auto">
 					<h4>Demam</h4>
 				</div>
-				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-out" data-aos-duration="1000">
+				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-in" data-aos-duration="1000">
 					<img src="image/lelah-kartun.jpg" class="d-block mx-auto">
 					<h4>Lelah</h4>
 				</div>
 			</div>	
 			<div class="row">
-				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-out">
+				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-in">
 					<img src="image/pusing-kartun.jpg" class="d-block mx-auto"data-aos-duration="1000"data-aos-duration="1000">
 					<h4>Sakit Kepala</h4>
 				</div>
-				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-out"data-aos-duration="1000"data-aos-duration="1000">
+				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-in"data-aos-duration="1000"data-aos-duration="1000">
 					<img src="image/diare-kartun.jpg" class="d-block mx-auto">
 					<h4>Diare</h4>
 				</div>
-				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-out" data-aos-duration="1000">
+				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-in" data-aos-duration="1000">
 					<img src="image/sesak-kartun.jpg" class="d-block mx-auto">
 					<h4>Sesak Napas</h4>
 				</div>

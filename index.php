@@ -4,13 +4,13 @@
 // var_dump(error_get_last());
 
 
-$data = file_get_contents("https://api.kawalcorona.com/indonesia");
+// $data = file_get_contents("https://api.kawalcorona.com/indonesia");
 
-// $data = file_get_contents("indonesia.json");
+$data = file_get_contents("indonesia.json");
 
-$data2 = file_get_contents("https://api.kawalcorona.com/indonesia/provinsi");
+// $data2 = file_get_contents("https://api.kawalcorona.com/indonesia/provinsi");
 
-// $data2 = file_get_contents("daerah.json");
+$data2 = file_get_contents("daerah.json");
 
 
 
@@ -42,7 +42,7 @@ $provinsi = json_decode($data2, true);
 
 	<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
 
-	<link rel="stylesheet" type="text/css" href="style7.css">
+	<link rel="stylesheet" type="text/css" href="style9.css">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
@@ -54,15 +54,26 @@ $provinsi = json_decode($data2, true);
 
 	<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
 
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@600&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@700&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Zilla+Slab+Highlight:wght@700&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	<!-- aos -->
 
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light  fixed-top navbar-gw">
   <div class="container">
-    <a class="navbar-brand" href="#">HEHE</a>
+    <a class="navbar-brand" href="#">Peduli <span>COVID</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -81,7 +92,7 @@ $provinsi = json_decode($data2, true);
 <div class="container">
 	<div class="kasus-all " id="kasus">
 		<div class="indonesia">
-			<h1>Kasus Covid-19 Indonesia</h1>
+			<h1>Kasus <span>Covid-19</span> Indonesia</h1>
 			<div class="data">
 				<div class="kasus positif">
 					<h3>Positif </h3> 
@@ -100,11 +111,11 @@ $provinsi = json_decode($data2, true);
 			<img src="image/virus.png" class="virus2">
 			<img src="image/virus.png" class="virus3">
 			<img src="image/virus.png" class="virus4">
-			<!-- <img src="image/virus.png" class="virus5"> -->
-
+			<img src="image/virus.png" class="virus5">
+			<!-- <img src="image/tameng.png" class="tameng"> -->
 		</div>
 
-		<h1 class="judul-daerah">Kasus Covid-19 Daerah</h1>
+		<h1 class="judul-daerah">Kasus <span>Covid-19</span> Daerah</h1>
 		<div class="daerah" >
 				<form action="" method="post" class="form-provinsi">
 					<label for="provinsi">Pilih Provinsi: </label>
@@ -118,16 +129,37 @@ $provinsi = json_decode($data2, true);
 							
 							<?php $i++ ?>
 						<?php endforeach ?>
-						<?php for ($i=0; $i < 34; $i++) :?> 
+						<?php for ($i=0; $i < 1; $i++) :?> 
 							<option value="<?php echo $i ?>"> <?php echo $provinsi[$i]["attributes"]["Provinsi"]; ?> </option>
 						<?php endfor ?>
 						
 					</select>
-					<input type="submit" name="submit" value="Lihat">
+					<input type="submit" name="submit" value="Lihat" id="submit">
 				</form>
 
+				<div class="dummy-data" id="dummy">
+					<div class="data data">
+						<div class="kasus positif kasus-daerah">
+						 	<h3> Positif  </h3>
+							<h4> 0 </h4>
+						 </div>
+						 <div class="kasus meninggal kasus-daerah">
+						 	<h3> Meninggal </h3>
+							<h4> 0 </h4>
+						 </div>
+						 <div class="kasus sembuh kasus-daerah">
+						 	<h3> Sembuh </h3> 
+							<h4> 0 </h4>
+						 </div>	
+					</div>
+				</div>
 				<?php if (isset($_POST['submit'])): ?>
 					<?php 
+					echo "<script>
+						const dummy = document.getElementById('dummy');
+
+						dummy.style.display = 'none';
+					</script>";
 					 $int = (is_numeric($_POST['kode']) ? (int)$_POST['kode'] : 0);
 					  ?>
 					<h2> Provinsi   <?php echo $provinsi[$int]["attributes"]["Provinsi"] ; ?> </h2>
@@ -146,6 +178,7 @@ $provinsi = json_decode($data2, true);
 						 </div>	
 					</div>
 				<?php endif ?>
+				
 		</div>
 	</div>
 	<div class="pencegahan mt-5">
@@ -182,57 +215,92 @@ $provinsi = json_decode($data2, true);
 		</div>
 	</div>
 
-	<div class="gejala" id="gejala">
-		<h2 class="mt-5 mb-4">Gejala - Gejala Covid 19</h2>
-		<div class="gejala-box">
-			<div class="row mt-3" >
-				<div class="col-lg-6 d-flex justify-content-center flex-column align-items-center">	
-					<div>
-				       <h3>Gejala Paling Umum</h3>
-				       <li  data-aos="fade-right" data-aos-duration="400" > Demam </li>
-				       <li  data-aos="fade-right" data-aos-duration="600" >Batuk Kering</li>
-				       <li data-aos="fade-right" data-aos-duration="800">Kelelahan</li>
-			       </div>
+	<div class="gejala" >
+		<div class="tanda-gejala" id="gejala"></div>
+		<h2 class="mt-5 mb-4" data-aos="fade-up" data-aos-duration="500">Gejala - Gejala <span>Covid-19</span></h2>
+		
+			<div class="row my-3">
+				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-out" data-aos-duration="1000">
+					<img src="image/batuk-kartun.jpg" class="d-block mx-auto">
+					<h4>Batuk</h4>
 				</div>
-				<div class="col-lg-6" data-aos="fade-left" data-aos-duration="1200" >	
-			       <img src="image/batuk.jpg" class="d-block mx-auto">
+				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-out" data-aos-duration="1000">
+					<img src="image/demam-kartun.jpg" class="d-block mx-auto">
+					<h4>Demam</h4>
 				</div>
+				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-out" data-aos-duration="1000">
+					<img src="image/lelah-kartun.jpg" class="d-block mx-auto">
+					<h4>Lelah</h4>
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-out">
+					<img src="image/pusing-kartun.jpg" class="d-block mx-auto"data-aos-duration="1000"data-aos-duration="1000">
+					<h4>Sakit Kepala</h4>
+				</div>
+				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-out"data-aos-duration="1000"data-aos-duration="1000">
+					<img src="image/diare-kartun.jpg" class="d-block mx-auto">
+					<h4>Diare</h4>
+				</div>
+				<div class="col-lg-4 d-flex gejala-card" data-aos="zoom-out" data-aos-duration="1000">
+					<img src="image/sesak-kartun.jpg" class="d-block mx-auto">
+					<h4>Sesak Napas</h4>
+				</div>
+			</div>	
+	</div>
+	<div class="telepon">
+		<h2 class="text-center">No Telepon Cepat Tanggap <span>Covid-19</span></h2>
+		<div class="row">
+			<div class="col-lg-6">
+				<h3 class="text-center">
+					Call Center Kota Bekasi
+				</h3>
+				<p class="text-center"> <i class="fa  fa-phone-square fa-lg" aria-hidden="true"></i >0813-1683-1813 </p>
+				<p class="text-center"> <i class="fa  fa-phone-square fa-lg" aria-hidden="true"></i >0812-9448-0776 </p>
+				
 			</div>
-
-			<div class="row mt-3">
-				<div class="col-lg-6 d-flex justify-content-center align-items-center flex-column">
-					<div>	
-				       <h3 >Gejala Kurang Umum  </h3>
-				       <li data-aos="fade-left" data-aos-duration="400"> Lidah Mati Rasa</li>
-				       <li data-aos="fade-left" data-aos-duration="600">Sakit Tenggorokan</li>
-				       <li data-aos="fade-left" data-aos-duration="800">Mual dan Muntah-muntah</li>
-			       </div>
-				</div>
-				<div class="col-lg-6">	
-			       <img src="image/tenggo.jpg" class="d-block mx-auto" data-aos="fade-right" data-aos-duration="1200">
-				</div>
-			</div>
-
-			<div class="row mt-3">
-				<div class="col-lg-6 d-flex justify-content-center flex-column align-items-center">	
-					<div>
-				       <h3 >Gejala Berat</h3>
-				       <li data-aos="fade-right" data-aos-duration="400"> Sesak Nafas </li>
-				       <li data-aos="fade-right" data-aos-duration="600">Nafsu Makan Hilang</li>
-				       <li data-aos="fade-right" data-aos-duration="800">Rasa Sakit Terus Menerus di Dada</li>
-			       </div>
-				</div>
-				<div class="col-lg-6">	
-			       <img src="image/sesak.jpg" class="d-block mx-auto" data-aos="fade-left" data-aos-duration="1200">
-				</div>
+			<div class="col-lg-6">
+				<h3 class="text-center">
+					Call Center PMI
+				</h3>
+				<p class="text-center"> <i class="fa  fa-phone-square fa-lg" aria-hidden="true"></i >(021) 88960247</p>
+				
+				
 			</div>
 		</div>
-			
-		
 	</div>
 </div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9">
+					<h6 class="footer-judul">About Us</h6>
+					<p>Website ini dibuat sebagai project magang kelompok dari Siswa/i kelas XI TKJ 4 SMKN 3 KOTA BEKASI yang berisikan data-data, cara pencegahan, dan gejala-gejala terkait Covid-19. Yang dimana data-data tersebut diharapkan dapat berguna bagi masyarakat.</p>
+				</div>	
+				<div class="col-lg-3 kontak">
+					<h6 class="footer-judul">Contact Us</h6>
+					<ul>
+						<li>
+							<a href="https://www.instagram.com/aqsolath/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i>Aqsha Lathif</a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/alisktch/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i>Ariyo Alinugroho</a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/auliamaulida1612/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i>Aulia Maulida</a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/madis_15/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i>Adi Saputra</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<hr>
+			<h6 class="copyright">Copyright <i class=" fa fa-copyright" aria-hidden="true"></i>2021</h6>
+		</div>
+	</footer>
 
-<footer>Copyright 2021</footer>
+
 
 
 
@@ -261,5 +329,14 @@ if (null !== error_get_last()) : ?>
 <script>
   AOS.init();
 </script>
+
+<script type="text/javascript">
+	const submit = document.getElementById('submit');
+
+	submit.addEventListener('click', function () {
+    	dummy.style.display = "none";
+    })
+</script>
+
 </body>
 </html>

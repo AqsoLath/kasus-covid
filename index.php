@@ -40,6 +40,8 @@ $provinsi = json_decode($data2, true);
 
 	<title>kasus korona</title>
 
+	<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+
 	<link rel="stylesheet" type="text/css" href="style7.css">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">

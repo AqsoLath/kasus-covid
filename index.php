@@ -4,13 +4,13 @@
 // var_dump(error_get_last());
 
 
-// $data = file_get_contents("https://api.kawalcorona.com/indonesia");
+$data = file_get_contents("https://api.kawalcorona.com/indonesia");
 
-$data = file_get_contents("indonesia.json");
+// $data = file_get_contents("indonesia.json");
 
-// $data2 = file_get_contents("https://api.kawalcorona.com/indonesia/provinsi");
+$data2 = file_get_contents("https://api.kawalcorona.com/indonesia/provinsi");
 
-$data2 = file_get_contents("daerah.json");
+// $data2 = file_get_contents("daerah.json");
 
 
 
@@ -129,7 +129,7 @@ $provinsi = json_decode($data2, true);
 							
 							<?php $i++ ?>
 						<?php endforeach ?>
-						<?php for ($i=0; $i < 1; $i++) :?> 
+						<?php for ($i=0; $i < 34; $i++) :?> 
 							<option value="<?php echo $i ?>"> <?php echo $provinsi[$i]["attributes"]["Provinsi"]; ?> </option>
 						<?php endfor ?>
 						
